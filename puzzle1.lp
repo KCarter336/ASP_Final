@@ -1,24 +1,31 @@
-leftCol(monitor, 13)
-leftCol(monitor, 15)
-leftCol(monitor, 15.6)
-leftCol(monitor, 21.5)
-leftCol(monitor, 27)
+leftCol(13).
+leftCol(15).
+leftCol(15_6).
+leftCol(21_5).
+leftCol(27).
 
-cola(processor, 2.0)
-cola(processor, 2.3)
-cola(processor, 2.5)
-cola(processor, 2.7)
-cola(processor, 3.1)
+cola(20).
+cola(23).
+cola(25).
+cola(27).
+cola(31).
 
-colb(hd, 250)
-colb(hd, 320)
-colb(hd, 500)
-colb(hd, 750)
-colb(hd, 1024)
+colb(250).
+colb(320).
+colb(500).
+colb(750).
+colb(1024).
 
-colc(price, 699)
-colc(price, 999)
-colc(price, 1149)
-colc(price, 1349)
-colc(price, 1649)
+colc(699).
+colc(999).
+colc(1149).
+colc(1349).
+colc(1649).
+
+% clues
+
+%1
+
+%2
+:- combo()
 

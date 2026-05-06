@@ -23,38 +23,45 @@ colc(3).
 colc(35).
 
 
-
 %clues
 
 % clue 1
-not combo(cola(kopi), leftCol(80)) :- cola(kopi), leftCol(80).
-:- combo(cola(kopi), leftCol(80)).
+:- combo(80, kopi, _, _).
 
 % clue 2
-combo(leftCol(100), colb(215)) :- leftCol(100), colb(215).
-:- not combo(leftCol(100), colb(215)).
+:- not combo(100, _, 215, _).
 
 % clue 3
-combo(cola(fazenda), colb(200)) ; combo(cola(esmar), colc(35)) ; combo(cola(fazenda), colc(35)) ; combo(cola(esmar), colb(200)) :- cola(fazenda), cola(esmar), colb(200), colc(35).
-:- not combo(cola(fazenda), colb(200)) ; combo(cola(esmar), colc(35)) ; combo(cola(fazenda), colc(35)) ; combo(cola(esmar), colb(200)).
+cond1 :- combo(_, esmar, 200, _).
+cond1 :- combo(_, _, 200, 35).
+:- not cond1.
 
 % clue 4
-combo(cola(helena), colc(45)) :- cola(helena), colc(45).
-:- not combo(cola(helena), colc(45)).
+:- not combo(_, helena, _, 45).
 
 % clue 5
-not combo(cola(helena), colb(195)) :- cola(helena), colb(195).
-:- combo(cola(helena), colb(195)).
+:- combo(_, helena, 195, _).
 
 % clue 6
-combo(colb(200), colc(3)) ; combo(leftCol(80), colc(3)) :- colb(200), leftCol(80), colc(3). 
-:- not combo(colb(200), colc(3)) ; combo(leftCol(80), colc(3)).
+cond2 :- combo(_, _, 200, 3).
+cond2 :- combo(80, _, _, 3).
+:- not cond2.
 
-% for "either or" problems 
-cond(1) :- leftCol(fazenda, colc(35)).
-cond(1) :- combo(cola(fazenda), colb(200)).
+% clue 7
+cond3 :- combo(50, _, 210, _).
+cond3 :- combo(50, fazenda, _, _).
+:- not cond3.
 
-:- not cond(1).
+% clue 8
+:- combo(_, bluMon, _, 35).
+% needs more
+
+% clue 9
+cond4 :- combo(_, _, 205, 1).
+cond4 :- combo(_, bluMon, 205, _).
+cond4 :- combo(50, _, _, 1).
+cond4 :- combo(50, bluMon, _, _).
+:- not cond4.
 
 
 
